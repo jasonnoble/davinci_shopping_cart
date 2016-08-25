@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DavinciShoppingCart</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>DavinciShoppingCart</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<% flash.each do |flash_type, flash_message| %>
+  <div class='flash' id='<%= flash_type %>'>
+    <%= flash_message %>
+  </div>
+<% end %>
+
+<%= yield %>
+</body>
 </html>

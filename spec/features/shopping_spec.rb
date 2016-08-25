@@ -17,4 +17,15 @@ feature "Shopping site" do
     expect(page).to have_image(product2.image_url)
     expect(page).to have_content(product2.price)
   end
+
+  scenario "User adds a product to their cart" do
+    product = FactoryGirl.create(:product)
+
+    visit "/"
+
+    click_button 'Add To Cart'
+
+    expect(page).to have_content("Product added to cart")
+    expect(page).to have_content(product.name)
+  end
 end
