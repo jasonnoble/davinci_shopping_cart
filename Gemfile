@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
+gem 'pundit'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
@@ -26,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -41,7 +43,6 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'faker'
-  gem 'bcrypt'
   gem 'sqlite3'
   gem 'shoulda-matchers'
 end
